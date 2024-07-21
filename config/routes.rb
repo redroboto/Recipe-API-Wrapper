@@ -7,5 +7,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     get "/random", to: "meals#index"
+    get "/categories", to: "meals#categories"
+    get "/meals/:name", to: "meals#search_name"
   end
 end
