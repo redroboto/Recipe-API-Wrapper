@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :recipes
 
   namespace :api do
-    get "/random", to: "random#index"
+    get "/random", to: "meals#index"
   end
 end
