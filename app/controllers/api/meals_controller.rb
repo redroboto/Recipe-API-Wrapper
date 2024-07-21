@@ -5,17 +5,17 @@ module Api
       render json: random_recipe
     end
 
-    def list_categories
+    def show_category_list
       meal_categories = ::MealDb::Client.list_categories
       render json: meal_categories
     end
 
-    def list_ingredients
+    def show_ingredient_list
       meal_ingredients = ::MealDb::Client.list_ingredients 
       render json: meal_ingredients
     end
 
-    def list_cuisines
+    def show_cuisine_list
       meal_cuisines = ::MealDb::Client.list_cuisines
       render json: meal_cuisines
     end
