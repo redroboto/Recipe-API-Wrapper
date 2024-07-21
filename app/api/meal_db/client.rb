@@ -11,5 +11,9 @@ module MealDb
     def self.search_by_name(name)
       response = Request.call("get", "/search.php", {params: {"s" => "#{name}"}})
     end
+
+    def self.filter_by_category(category)
+      response = Request.call("get", "/filter.php", {params: {"c" => "#{category}"}})
+    end
   end
 end

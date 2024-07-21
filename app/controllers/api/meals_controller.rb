@@ -15,10 +15,18 @@ module Api
       render json: search_result
     end
 
+    def filter_category
+      filter_result = ::MealDb::Client.filter_by_category(filter_category_params)
+    end
+
     private
 
     def search_params
       params.require(:name)
+    end
+
+    def filter_category_params
+      params.require(:category)
     end
   end
 end

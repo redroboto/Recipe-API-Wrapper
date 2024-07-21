@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     get "/random", to: "meals#index"
     get "/categories", to: "meals#categories"
     get "/meals/:name", to: "meals#search_name"
+    get "/meals/:category", to: "meals#filter_by_category"
   end
 end
