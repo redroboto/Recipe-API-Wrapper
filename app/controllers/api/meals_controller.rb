@@ -25,13 +25,18 @@ module Api
       render json: search_result
     end
 
-    def filter_category
+    def show_by_category
       filter_result = ::MealDb::Client.filter_by_category(filter_category_params)
       render json: filter_result
     end
 
-    def filter_by_ingredient 
+    def show_by_ingredient 
       filter_result = ::MealDb::Client.filter_by_ingredient(filter_ingredient_params)
+      render json: filter_result
+    end
+
+    def show_by_cuisine
+      filter_result = ::MealDb::Client.filter_by_cuisine(filter_cuisine_params)
       render json: filter_result
     end
 
@@ -47,6 +52,10 @@ module Api
 
     def filter_ingredient_params
       params.require(:ingredient)
+    end
+
+    def filter_cuisine_params
+      params.require(:cuisine)
     end
   end
 end

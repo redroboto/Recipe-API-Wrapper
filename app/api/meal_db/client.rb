@@ -27,5 +27,9 @@ module MealDb
     def self.filter_by_ingredient(ingredient)
       response = Request.call("get", "/filter.php", {params: {"i" => "#{ingredient}"}})
     end
+
+    def self.filter_by_cuisine(cuisine)
+      response = Request.call("get", "/filter.php", {params: {"a" => "#{cuisine}"}})
+    end
   end
 end
