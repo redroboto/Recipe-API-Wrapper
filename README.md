@@ -33,6 +33,57 @@ The API only provides for GET requests which can be accessed using the commands 
 ::MealDb::Client.random
 ```
 
+URL suffix: /meals/random
+
+### List all available recipe categories, ingredients, or cuisines
+
+```
+::MealDb::Client.list_categories
+```
+
+URL suffix: /meals/categories
+
+```
+::MealDb::Client.list_ingredients
+```
+
+URL suffix: /meals/ingredients
+
+```
+::MealDb::Client.list_cuisines
+```
+
+URL suffix: /meals/cuisines
+
+### Searching by recipe category, ingredient, or cuisine
+
+```
+::MealDb::Client.filter_by_category(category)
+```
+
+URL suffix: /meals/category/:category
+
+```
+::MealDb::Client.filter_by_ingredient(ingredient)
+```
+
+URL suffix: /meals/ingredient/:ingredient
+
+```
+::MealDb::Client.filter_by_cuisine(cuisine)
+```
+
+URL suffix: /meals/cuisine/:cuisine
+
+### Searching by recipe name
+
+::MealDb::Client.search_by_name(name)
+
+URL suffix: /meals/name/:name
+
+
+
+
 Things you may want to cover:
 
 * Ruby version
