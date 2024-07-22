@@ -88,6 +88,19 @@ RSpec.describe ::MealDb::Client, type: :request do
         expect(response[:data]).to eq(random_recipe_data)
       end
     end
+
+    context 'when the site is not working' do
+      before do
+        stub_request(:get, url).to_return(status: 503, body: {message: 'Service Unavailable. Please try again!'}.to_json, headers: {'Content-Type' => 'application/json'} )
+      end
+
+      it 'returns the correct error message' do
+        response = ::MealDb::Client.random
+          expect(response[:code]).to eq(503)
+          expect(response[:status]).to eq('503 Service Unavailable')
+          expect(response[:data]).to eq('Service Unavailable. Please try again!')
+      end
+    end
   end
 
 end

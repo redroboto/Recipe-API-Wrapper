@@ -11,7 +11,14 @@ module MealDb
         url: "#{BASE_URL}#{endpoint}",
         headers: headers
       )
-      { code: result.code, status: 'Success', data: JSON.parse(result.body)}
+
+      result_body = JSON.parse(result.body)
+
+      if result_body["meals"] == nil
+        { code: result.code, status: 'Success', data: "Recipe not found."}
+      else
+        { code: result.code, status: 'Success', data: result_body}
+      end
     rescue RestClient::ExceptionWithResponse => error 
       { code: error.http_code, status: error.message, data: Errors.map(error.http_code)}
     end
