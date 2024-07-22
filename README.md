@@ -4,7 +4,8 @@ An API wrapper built using Ruby on Rails to simplify sending requests to themeal
 
 ## Dependencies
 
--**rest-client**-
+- rest-client
+
 
 Things you may want to cover:
 
