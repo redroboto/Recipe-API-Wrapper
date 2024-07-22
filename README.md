@@ -5,6 +5,15 @@ An API wrapper built using Ruby on Rails to simplify sending requests to themeal
 ## Dependencies
 
 - rest-client
+- rspec-rails
+- webmock
+
+## Configuration
+
+1. Clone the project
+2. Run ```sh
+$ bundle install
+```
 
 
 Things you may want to cover:
