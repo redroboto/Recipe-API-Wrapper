@@ -1,7 +1,10 @@
-# README
+# RECIPES API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An API wrapper built using Ruby on Rails to simplify sending requests to themealdb.com/api.php to retrieve recipes.
+
+## Dependencies
+
+-**rest-client**-
 
 Things you may want to cover:
 
