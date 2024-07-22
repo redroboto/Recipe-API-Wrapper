@@ -11,7 +11,8 @@ An API wrapper built using Ruby on Rails to simplify sending requests to themeal
 ## Configuration
 
 1. Clone the project
-2. Run ```sh
+2. Run the command in your shell:
+```sh
 $ bundle install
 ```
 
