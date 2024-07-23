@@ -14,11 +14,14 @@ module MealDb
 
       result_body = JSON.parse(result.body)
 
-      if result_body["meals"] == nil
+      # Checks if meals == nil only when searching by name, category, ingredient, or cuisine
+      # meals key only exists for the mentioned searches aka GET requests
+      if result_body.has_key?("meals") && result_body["meals"] == nil
         { code: result.code, status: 'Success', data: "Recipe not found."}
       else
         { code: result.code, status: 'Success', data: result_body}
       end
+
     rescue RestClient::ExceptionWithResponse => error 
       { code: error.http_code, status: error.message, data: Errors.map(error.http_code)}
     end
