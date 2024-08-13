@@ -1,4 +1,4 @@
-# RECIPES API
+# RECIPES API WRAPPER
 
 An API wrapper built using Ruby on Rails to simplify sending requests to themealdb.com/api.php to retrieve recipes.
 
